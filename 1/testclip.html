@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .card {
+      width: 300px;
+      background: #fff;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-family: sans-serif;
+    }
+
+    .card p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; /* Number of lines to show */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+      /* Optional fallback properties */
+      line-clamp: 2;  /* Not fully supported */
+      box-orient: vertical;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+      vulputate, velit quis faucibus ullamcorper, tellus nulla congue magna,
+      vitae fringilla leo quam eget velit. Suspendisse potenti. In non...
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f5f6fa;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+header input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #f0f2f5;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.profile {
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+main.board {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Or whatever spacing you prefer */
+}
+
+section h2 {
+  margin-bottom: 1rem;
+}
+
+
+.card {
+  width: 80%;
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.card p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Optional fallback properties */
+  line-clamp: 3; /* Not fully supported */
+  box-orient: vertical;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+
+  /* Limit to one line with ellipsis */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* Number of lines to show */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Optional fallback properties */
+  line-clamp: 1; /* Not fully supported */
+  box-orient: vertical;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.tag.blue {
+  background: #3498db;
+}
+.tag.pink {
+  background: #e91e63;
+}
+.tag.purple {
+  background: #9b59b6;
+}
+.tag.green {
+  background: #2ecc71;
+}
+.tag.gray {
+  background: #95a5a6;
+}
+.tag.red {
+  background: #e74c3c;
+}
+
+.date {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.date.red {
+  color: #e74c3c;
+}
+.date.green {
+  color: #27ae60;
+}
+.date.blue {
+  color: #2980b9;
+}
+.date.gray {
+  color: #7f8c8d;
+}
