@@ -30,7 +30,6 @@ function App() {
   //update localStorage whenever cartItems changes
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    console.log("Cart items updated:", cartItems); //debug
   }, [cartItems]);
 
   return (
@@ -52,7 +51,6 @@ function App() {
         cartItems={cartItems}
         isOpen={cartOpen}
         onClose={() => {
-          console.log("Cart closed"); //debug
           setCartOpen(false);
         }}
         onRemove={handleRemoveFromCart}

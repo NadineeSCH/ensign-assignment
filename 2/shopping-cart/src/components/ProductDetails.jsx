@@ -17,8 +17,6 @@ export default function ProductDetails({ onCartUpdate }) {
   async function fetchDetails() {
     let data = await fetchDetailsApi(id);
     setDetail(data);
-    console.log(data);
-    console.log(data.rating);
   }
 
   function handleClick() {

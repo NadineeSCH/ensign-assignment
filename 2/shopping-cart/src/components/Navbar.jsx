@@ -1,10 +1,11 @@
 import {ShoppingBagIcon} from '@heroicons/react/24/outline'
+import { Link } from "react-router-dom";
+import logo from '../assets/logo.png';
 
 export default function Navbar({openCart,numItems}) {
 
     function handleCartClick() {
         // Logic to open the cart drawer
-        console.log("Cart icon clicked"); // debug
         openCart();
     }
 
@@ -13,7 +14,10 @@ return (
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Title/Logo */}
         <div className="flex items-center">
-          <h1 className="text-xl font-semibold text-gray-900">Shopify</h1>
+          <Link to="/" className="flex align-center">
+          <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
+          <h1 className="text-2xl font-semibold text-gray-900 hover:text-gray-500">OneClick</h1>
+          </Link>
         </div>
 
         {/* Shopping Cart */}
