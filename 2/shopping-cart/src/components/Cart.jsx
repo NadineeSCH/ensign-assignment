@@ -1,25 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-// import { XMarkIcon } from '@heroicons/react/24/outline'
-
-// export default function Cart({cartItems, isOpen, onClose}) {
-//   // get cart items from context or localStorage
-//   if (!isOpen){
-//     return null; // If cart is not open, don't render anything
-//   }
-
-//   console.log("Current cart items, printed from cart:", cartItems); //debug
-
-//   // return (
-//   //   <div className="p-8">
-//   //     <h1 className="text-xl font-semibold mb-4">Your Cart</h1>
-
-//   //     {/* Quantity adjuster, remove button, total price */}
-//   //   </div>
-//   // );
-
-// }
-
 "use client";
 
 import {
