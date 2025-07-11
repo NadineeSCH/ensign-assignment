@@ -1,15 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
-export default function ProductDetails() {
+export default function ProductDetails({ onCartUpdate }) {
   const { id } = useParams();
 
   // You'd usually fetch from API using the ID, but for now, just hardcode or simulate
  
 
   const [detail, setDetail] = useState({});
-  const navigate = useNavigate();
   
     async function fetchDetails() {
       fetch("https://fakestoreapi.com/products/"+id)
@@ -18,7 +16,7 @@ export default function ProductDetails() {
     }
 
     function handleClick(){
-        
+        onCartUpdate(detail);
     }
 
     
@@ -28,7 +26,7 @@ export default function ProductDetails() {
     }, []);
 
   return (
-    <div className="p-8">
+    <div className="p-8 mt-16">
       <h1 className="text-2xl font-bold">{detail.title}</h1>
       <img src={detail.image} alt={detail.imageAlt} />
       <p>{detail.price}</p>
