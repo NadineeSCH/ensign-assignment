@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import {fetchDetailsApi} from '../api'; 
 
 export default function ProductDetails({ onCartUpdate }) {
   const { id } = useParams();
@@ -10,16 +11,14 @@ export default function ProductDetails({ onCartUpdate }) {
   const [detail, setDetail] = useState({});
   
     async function fetchDetails() {
-      fetch("https://fakestoreapi.com/products/"+id)
-        .then((response) => response.json())
-        .then((data) => setDetail(data));
+      let data = await fetchDetailsApi(id);
+      setDetail(data);
     }
 
     function handleClick(){
         onCartUpdate(detail);
     }
 
-    
   
     useEffect(() => {
       fetchDetails();

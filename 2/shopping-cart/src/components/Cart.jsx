@@ -89,7 +89,7 @@ export default function Cart({
                                       </Link>
                                     </h3>
                                     <p className="ml-4">
-                                      ${(product.price * quantity).toFixed(2)}
+                                      ${product.price.toFixed(2)}
                                     </p>
                                   </div>
                                   <p className="mt-1 text-sm text-gray-500">
