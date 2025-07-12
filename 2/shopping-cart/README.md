@@ -1,7 +1,7 @@
-React Shopping App
+Ensign Assignment Part 2 - React Shopping App
 ==================
 
-A minimal and modern shopping product details page built with React, Tailwind CSS, and Heroicons, with core features including:
+A minimal and modern shopping product details page built with React, Tailwind CSS, Headlessui and Heroicons, with core features including:
 
 - Product information display
 - Star rating visualization
