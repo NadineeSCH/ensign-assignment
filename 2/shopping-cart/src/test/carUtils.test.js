@@ -3,14 +3,14 @@ import { addToCart, removeFromCart, updateQuantity } from '../utils/cartUtils';
 describe('Cart Utilities', () => {
   const sampleProduct = { id: 1, name: 'Sample Product' };
 
-  test('adds new product to cart', () => {
-    const result = addToCart([], sampleProduct);
-    expect(result).toEqual([{ product: sampleProduct, quantity: 1 }]);
+  test('adds new product to cart as much as the quantity', () => {
+    const result = addToCart([], sampleProduct, 2);
+    expect(result).toEqual([{ product: sampleProduct, quantity: 2}]);
   });
 
   test('increments quantity if product exists', () => {
     const initialCart = [{ product: sampleProduct, quantity: 1 }];
-    const result = addToCart(initialCart, sampleProduct);
+    const result = addToCart(initialCart, sampleProduct, 1);
     expect(result[0].quantity).toBe(2);
   });
 

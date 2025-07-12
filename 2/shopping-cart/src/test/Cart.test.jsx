@@ -63,7 +63,7 @@ describe("Cart Component", () => {
 
     expect(screen.getByText("Test Product 1")).toBeInTheDocument();
     expect(screen.getByText("Test Product 2")).toBeInTheDocument();
-    expect(screen.getByText("$21.98")).toBeInTheDocument(); // 10.99 * 2
+    expect(screen.getByText("$10.99")).toBeInTheDocument();
     expect(screen.getByText("$15.99")).toBeInTheDocument();
     expect(screen.getByText("$37.97")).toBeInTheDocument(); // Total
   });
