@@ -1,6 +1,5 @@
 body {
   font-family: "Segoe UI", sans-serif;
-  margin: 0;
   background: #f5f6fa;
   color: #333;
 }
@@ -14,37 +13,65 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
-  margin-right: 2rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+
+.boundary{
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity:0.5;
+  margin-left:0.5rem;
+}
+.avatar{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
 }
 
 header input {
   flex: 1;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 3rem;
   border: none;
-  background: #f0f2f5;
-  border-radius: 20px;
+  /* background: #faf8f8; */
+  background-image: url(search.png);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 1.5rem;
+  opacity:0.5;
   font-size: 1rem;
+}
+
+::placeholder {
+  color: #caced2;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #caced2;
 }
 
 .profile {
   margin-left: 2rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 main.board {
   display: flex;
-  gap: 2.5rem;
+  /* gap: 0rem; */
   padding: 2rem;
   padding-left: 5rem;
-  padding-right: 5rem;
+  padding-right: 1rem;
 }
 
 section {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* Or whatever spacing you prefer */
+  gap: 1.25rem; 
 }
 
 section h2 {
