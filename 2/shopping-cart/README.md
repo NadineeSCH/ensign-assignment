@@ -48,7 +48,7 @@ Getting Started
 
 1. Clone the repository:
    git clone https://github.com/NadineeSCH/ensign-assignment.git
-   cd ensign-assignment
+   cd ensign-assignment/2/shopping-cart
 
 2. Install dependencies:
    npm install
@@ -85,6 +85,7 @@ Technologies Used
 - React
 - Tailwind CSS
 - Heroicons
+- Headlessui
 - Vite
 - Vitest, React Testing Library
 
@@ -92,10 +93,4 @@ Technologies Used
 Author
 ----------------------------------------
 
-Made with ❤️ by [Your Name]
-
-----------------------------------------
-License
-----------------------------------------
-
-MIT License (or whichever you prefer)
+Made with by Nadine V
