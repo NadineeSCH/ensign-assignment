@@ -16,8 +16,8 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
 
 
-  function handleAddToCart(product) {
-    setCartItems((prevItems) => addToCart(prevItems, product));
+  function handleAddToCart(product, quantity) {
+    setCartItems((prevItems) => addToCart(prevItems, product, quantity));
   }
 
   function handleRemoveFromCart(productId) {

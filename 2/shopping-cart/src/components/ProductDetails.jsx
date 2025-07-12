@@ -8,13 +8,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function ProductDetails({ onCartUpdate}) {
+function ProductDetails({ onCartUpdate }) {
   const { id } = useParams(); //fetch from url params
 
   const [detail, setDetail] = useState({});
 
   const [showPopup, setShowPopup] = useState(false);
 
+  const [quantity, setQuantity] = useState(1);
 
   async function fetchDetails() {
     let data = await fetchDetailsApi(id);
@@ -22,7 +23,7 @@ function ProductDetails({ onCartUpdate}) {
   }
 
   function handleClick() {
-    onCartUpdate(detail);
+    onCartUpdate(detail, quantity);
     setShowPopup(true);
     setTimeout(() => {
       setShowPopup(false);
@@ -33,16 +34,8 @@ function ProductDetails({ onCartUpdate}) {
     fetchDetails();
   }, []);
 
-  //debugging rerendering
-
-
   return (
     <div className="bg-white pt-20 flex justify-center">
-      {/* {showPopup && (
-        <div className="fixed top-4 right-4 z-50 rounded bg-green-500 px-4 py-2 text-white shadow-lg transition-opacity">
-          Added to cart!
-        </div>
-      )} */}
       <Notification message="Added to cart" visible={showPopup} />
       <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
         <img src={detail.image} className="rounded-lg object-contain" />
@@ -114,7 +107,34 @@ function ProductDetails({ onCartUpdate}) {
           </div>
         </div>
 
-        <div className="mt-2">
+        <div className="mt-2 space-y-4">
+          {/* Quantity Selector */}
+          <div className="flex space-x-4 items-center">
+            <p className="text-sm font-medium text-gray-900">Quantity</p>
+
+            <div className="flex items-center justify-center">
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                className="px-3 py-1 border border-gray-300 rounded-l-md text-gray-600 hover:bg-gray-100 disabled:opacity-50"
+                disabled={quantity <= 1}
+              >
+                -
+              </button>
+              <span className="px-4 py-1 border-t border-b border-gray-300 text-center min-w-[2rem]">
+                {quantity}
+              </span>
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => q + 1)}
+                className="px-3 py-1 border border-gray-300 rounded-r-md text-gray-600 hover:bg-gray-100"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          {/* Add to Cart Button */}
           <button
             className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
             onClick={handleClick}
