@@ -62,6 +62,8 @@ Then open http://localhost:5173/ in your browser.
 ----------------------------------------
 Testing
 ----------------------------------------
+Vitest is used since it can work seamlessly with Vite.
+
 To test, run:
 npm test
 
@@ -93,4 +95,4 @@ Technologies Used
 Author
 ----------------------------------------
 
-Made with by Nadine V
+Made by Nadine V
