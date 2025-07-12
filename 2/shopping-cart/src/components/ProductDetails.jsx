@@ -2,17 +2,19 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchDetailsApi } from "../api";
 import { StarIcon } from "@heroicons/react/20/solid";
+import Notification from "./Notification";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ProductDetails({ onCartUpdate }) {
-  const { id } = useParams();
-
-  // You'd usually fetch from API using the ID, but for now, just hardcode or simulate
+function ProductDetails({ onCartUpdate}) {
+  const { id } = useParams(); //fetch from url params
 
   const [detail, setDetail] = useState({});
+
+  const [showPopup, setShowPopup] = useState(false);
+
 
   async function fetchDetails() {
     let data = await fetchDetailsApi(id);
@@ -21,14 +23,27 @@ export default function ProductDetails({ onCartUpdate }) {
 
   function handleClick() {
     onCartUpdate(detail);
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2000); // 2 seconds
   }
 
   useEffect(() => {
     fetchDetails();
   }, []);
 
+  //debugging rerendering
+
+
   return (
-    <div className="bg-white pt-10 flex justify-center">
+    <div className="bg-white pt-20 flex justify-center">
+      {/* {showPopup && (
+        <div className="fixed top-4 right-4 z-50 rounded bg-green-500 px-4 py-2 text-white shadow-lg transition-opacity">
+          Added to cart!
+        </div>
+      )} */}
+      <Notification message="Added to cart" visible={showPopup} />
       <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
         <img src={detail.image} className="rounded-lg object-contain" />
       </div>
@@ -99,15 +114,17 @@ export default function ProductDetails({ onCartUpdate }) {
           </div>
         </div>
 
-        <form className="mt-2">
+        <div className="mt-2">
           <button
             className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
             onClick={handleClick}
           >
             Add to cart
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );
 }
+
+export default ProductDetails;

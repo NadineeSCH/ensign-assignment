@@ -15,6 +15,7 @@ function App() {
 
   const [cartOpen, setCartOpen] = useState(false);
 
+
   function handleAddToCart(product) {
     setCartItems((prevItems) => addToCart(prevItems, product));
   }
@@ -44,7 +45,7 @@ function App() {
         <Route path="/" element={<ProductsPage />} />
         <Route
           path="/product/:id"
-          element={<ProductDetails onCartUpdate={handleAddToCart} />}
+          element={<ProductDetails onCartUpdate={handleAddToCart}/>}
         />
       </Routes>
       <Cart
